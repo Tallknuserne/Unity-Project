@@ -36,13 +36,13 @@ public class Grid : MonoBehaviour {
 		mTerrainWidth = (int)mTData.size.x;
 		mTerrainLength = (int)mTData.size.z;
 		
-		Debug.Log("Terrain Width: " + mTerrainWidth);
-		Debug.Log("Terrain Length: " + mTerrainLength);
+		//Debug.Log("Terrain Width: " + mTerrainWidth);
+		//Debug.Log("Terrain Length: " + mTerrainLength);
 			
 		mTileWidth = (mTerrainWidth / mXCells);
 		mTileLength = (mTerrainLength / mYCells);
-		Debug.Log ("Tile Width: " + mTileWidth);
-		Debug.Log ("Tile length: " + mTileLength);
+		//Debug.Log ("Tile Width: " + mTileWidth);
+		//Debug.Log ("Tile length: " + mTileLength);
 		
 		mSquare = new Square[mXCells, mYCells];
 		
@@ -61,10 +61,10 @@ public class Grid : MonoBehaviour {
 		{
 			for(int j = 0; j<mYCells; j++)
 			{
-				Debug.Log (mSquare[i,j].toString ());
+				//Debug.Log (mSquare[i,j].toString ());
 			}
 		}	
-		Debug.Log (mSquare.Length);
+		//Debug.Log (mSquare.Length);
 		
 			
 		

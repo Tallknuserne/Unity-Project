@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
 		{	
 			//FindMatrixPos();
+			Debug.Log("Player pos før: " + player.transform.position);
 			PlasserBrikke();
 		}
 	}
@@ -43,14 +44,17 @@ public class PlayerMovement : MonoBehaviour {
 		int x_length = (int)(square[0,0].getMLength() * grid.getMXCells()); 	//lengden på brettet gitt i koordinat
 		int z_length = (int)(square[0,0].getMLength() * grid.getMYCells());	//dybden på brettet gitt i koordinat
 		
-		int x_ = (int)playerPos.x;										//plassen til spilleren gitt i x koordinat
-		int z_ = (int)playerPos.z;										//plassen til spilleren gitt i z koordinat
+		int x = (int)playerPos.x;										//plassen til spilleren gitt i x koordinat
+		int z = (int)playerPos.z;										//plassen til spilleren gitt i z koordinat
 		
 		//fare for å dele på null, men spilleren skal "aldri" være i null
 		int pos_x_matrix = (int)((playerPos.x)/(x_length/grid.getMXCells()));
 		int pos_z_matrix = (int)((playerPos.z)/(z_length/grid.getMYCells()));
 		
 		int[] intern = {pos_x_matrix , pos_z_matrix};
+		
+		Debug.Log("FindMatrixPos - x: " + x);
+		Debug.Log("FindMatrixPos - z: " + z);
 		
 		return intern;
 	}
@@ -70,11 +74,14 @@ public class PlayerMovement : MonoBehaviour {
 				z++;
 				eyes -= max_x - x;
 				
-				x -= max_x - eyes;
+				x = max_x - eyes;
+				x--;
+				Debug.Log("Inne i if 1 x/z: " + x + "/" + z);
 			}
 			else
 			{
 				x += eyes;
+				Debug.Log("Inne i else 1 x/z: " + x + "/" + z);
 			}
 		}
 		else if(matrix[0]%2 == 1)
@@ -84,25 +91,35 @@ public class PlayerMovement : MonoBehaviour {
 				z++;
 				eyes -= x;
 				x = (eyes-1);
+				Debug.Log("Inne i if 2 x/z: " + x + "/" + z);
 			}
 			else
 			{
 				x -= eyes;
+				Debug.Log("Inne i else 2 x/z: " + x + "/" + z);
 			}
 		}
 		matrix[0] = x;
 		matrix[1] = z;
 		
+		Debug.Log("Matrix [0] = " + matrix[0]);
+		Debug.Log("Matrix [1] = " + matrix[1]);
 		return matrix;
 	}
 	
 	public void PlasserBrikke()
 	{
-		int[] matrix = MovePlayer(3);
+		int[] matrix = MovePlayer(5);
 		int x_pos = (int)(matrix[0] * square[0,0].getMLength());
 		int z_pos = (int)(matrix[1] * square[0,0].getMLength());
 		
 		Vector3 playerPos = player.transform.position; 
-		player.transform.Translate(new Vector3(x_pos, 0, z_pos) - playerPos);
+		
+		Debug.Log("XPOS : " + x_pos);
+		Debug.Log("zPOS : " + z_pos);
+		
+		player.transform.Translate(new Vector3(x_pos, 0, z_pos));
+		Debug.Log("Player pos etter: " + playerPos);
+		
 	}
 }
