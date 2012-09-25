@@ -64,8 +64,6 @@ public class Draw : MonoBehaviour {
 				GL.End ();
 			}
 		}
-		
-		
 	}
 	/*void OnPostRender(){
 	if(!lineMaterial){

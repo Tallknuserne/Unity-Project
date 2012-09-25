@@ -7,6 +7,7 @@ public class Square : MonoBehaviour {
 	private float mY;
 	private float mWidth;
 	private float mLength;
+	Question qt;
 	
 	UnityEngine.GameObject mGameObject;
 	
@@ -19,6 +20,11 @@ public class Square : MonoBehaviour {
 		mGameObject = go;
 	}
 	
+	public void setQt(int nyQuestion_id, char nyOperationType, string nyQuestion, string nyAnswer, string[] hints)
+	{
+		qt = new Question(nyQuestion_id, nyOperationType, nyQuestion, nyAnswer, hints);
+	}
+	
 	public float getX()
 	{
 		return mX;
@@ -27,7 +33,7 @@ public class Square : MonoBehaviour {
 	{
 		return mY;
 	}
-#region Henter ut størrelsen til brikkene
+	
 	public float getMWidth()
 	{
 		return mWidth;
@@ -37,7 +43,6 @@ public class Square : MonoBehaviour {
 	{
 		return mLength;
 	}
-#endregion Henter ut størrelsen til brikkene
 	
 	public float getXPlus()
 	{
