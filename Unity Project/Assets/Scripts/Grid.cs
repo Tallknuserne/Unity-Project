@@ -10,8 +10,8 @@ public class Grid : MonoBehaviour {
 	private TerrainData mTData;
 	private int mTerrainWidth;
 	private int mTerrainLength;
-	private int mXCells =6;
-	private int mYCells =6;
+	private int mXCells = 5;
+	private int mYCells = 5;
 	private float mTileWidth;
 	private float mTileLength;
 	private Square[ , ] mSquare;
@@ -35,14 +35,9 @@ public class Grid : MonoBehaviour {
 	
 		mTerrainWidth = (int)mTData.size.x;
 		mTerrainLength = (int)mTData.size.z;
-		
-		Debug.Log("Terrain Width: " + mTerrainWidth);
-		Debug.Log("Terrain Length: " + mTerrainLength);
 			
 		mTileWidth = (mTerrainWidth / mXCells);
 		mTileLength = (mTerrainLength / mYCells);
-		Debug.Log ("Tile Width: " + mTileWidth);
-		Debug.Log ("Tile length: " + mTileLength);
 		
 		mSquare = new Square[mXCells, mYCells];
 		
@@ -61,10 +56,8 @@ public class Grid : MonoBehaviour {
 		{
 			for(int j = 0; j<mYCells; j++)
 			{
-				Debug.Log (mSquare[i,j].toString ());
 			}
 		}	
-		Debug.Log (mSquare.Length);
 	}
 	
 	public int getZOffset()

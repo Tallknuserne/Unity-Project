@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="23" Column="12" />
+      <File FileName="Assets\Scripts\menu and models\FlyScript.cs" Line="16" Column="35" />
+      <File FileName="Assets\Scripts\Grid.cs" Line="38" Column="3" />
+      <File FileName="Assets\Scripts\Square.cs" Line="14" Column="31" />
+      <File FileName="Assets\Scripts\Draw.cs" Line="46" Column="19" />
+      <File FileName="Assets\Scripts\Testing.cs" Line="4" Column="37" />
+      <File FileName="Assets\Scripts\Question.cs" Line="6" Column="12" />
+      <File FileName="Assets\Scripts\Player.cs" Line="21" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
